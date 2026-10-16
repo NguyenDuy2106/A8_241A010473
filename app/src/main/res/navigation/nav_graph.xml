@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/tab_home">
+
+    <fragment
+        android:id="@+id/tab_home"
+        android:name="vn.edu.vhu.ltdd.a8fragment.HomeFragment"
+        android:label="Trang chủ"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/tab_news"
+        android:name="vn.edu.vhu.ltdd.a8fragment.NewsListFragment"
+        android:label="Tin tức"
+        tools:layout="@layout/fragment_news_list">
+        <action
+            android:id="@+id/action_newsList_to_newsDetail"
+            app:destination="@id/newsDetailFragment"
+            app:enterAnim="@anim/slide_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/slide_out" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/newsDetailFragment"
+        android:name="vn.edu.vhu.ltdd.a8fragment.NewsDetailFragment"
+        android:label="Chi tiết tin"
+        tools:layout="@layout/fragment_news_detail" />
+
+    <fragment
+        android:id="@+id/tab_profile"
+        android:name="vn.edu.vhu.ltdd.a8fragment.ProfileFragment"
+        android:label="Cá nhân"
+        tools:layout="@layout/fragment_profile" />
+
+</navigation>
